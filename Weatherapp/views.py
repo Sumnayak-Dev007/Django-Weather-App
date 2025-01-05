@@ -3,7 +3,7 @@ import requests
 from django.shortcuts import render
 
 def Home_view(request):
-    API_KEY = 'ad277d69eb2aacf8dc4fa85cd556cd5e'
+    API_KEY = '<Your_API_Key>'
     current_weather_url = "https://api.openweathermap.org/data/2.5/weather?q={}&appid={}"
     forecast_url = "https://api.openweathermap.org/data/2.5/forecast?lat={}&lon={}&appid={}"
 

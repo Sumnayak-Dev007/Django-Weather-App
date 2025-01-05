@@ -89,8 +89,8 @@ DATABASES = {
     'default': {
         "ENGINE": "django.db.backends.mysql",
         "NAME": "weatherapp",
-        "USER": "root",
-        "PASSWORD": "Suman_Dev001",
+        "USER": "",
+        "PASSWORD": "",
         "HOST": "127.0.0.1",
         "PORT": "3306",
     }
