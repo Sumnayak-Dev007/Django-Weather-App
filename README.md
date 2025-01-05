@@ -9,11 +9,12 @@ Forecast Weather API : https://api.openweathermap.org/data/2.5/forecast?lat={}&l
 <h4>Register Module:</h4><br>
 <b>User can register with their unique credentials </b><br>
 <h4>Validations Measures<br>
-<b>All users must have unique user name</b><br>
-<b>Email address should be valid otherwise it will not register users</b><br>
-<b>Password Policy is applied <ul><li>min length : 8</li> 
+<ul><li><b>All users must have unique user name</b></li><br>
+<li><b>Email address should be valid otherwise it will not register users</b></li><br>
+<li><b>Password Policy is applied <ul><li>min length : 8</li> 
 <li>password must contain alphanumeric characters for strong password</li>
-</ul></b><br>
+</ul></b></li></ul><br>
+
 
 <h4>Login Module:</h4><br>
 <b>Only registered users can login with their username and password</b><br>
