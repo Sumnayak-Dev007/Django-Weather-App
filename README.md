@@ -1,6 +1,6 @@
 <h2>Weather App</h2><br><br>
 
-My API key :  " "<br> (API Key is mandatory for this API):)
+My API key :  " " :: (API Key is mandatory for this API)  :D <br>
 
 Current Weather API : https://api.openweathermap.org/data/2.5/weather?q={}&appid={}<br>
 Forecast Weather API : https://api.openweathermap.org/data/2.5/forecast?lat={}&lon={}&appid={}<br><br>
