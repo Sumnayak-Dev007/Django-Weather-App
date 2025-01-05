@@ -26,7 +26,7 @@ Forecast Weather API : https://api.openweathermap.org/data/2.5/forecast?lat={}&l
 <li><b>Humidity</b></li>
 <li><b>It describes 5 day weather forecast of the city</b></li>
 <li><b>Weather icons are uded to describe air,cloud/sky conditions</b></li>
-<li><h4>User can compare weather of two different cities as well by providing city name in both fields</h4></li></ul>
+<li><h4>User can compare weather of two different cities as well by providing city name in both fields</h4></li></ul><br>
 
 <h4>Logout Module</h4><br>
 <b>After clicking the logout button User will be redirected to Login Page</b><br>
