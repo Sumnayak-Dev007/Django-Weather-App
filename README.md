@@ -1,7 +1,5 @@
 <h2>Weather App</h2><br><br>
 
-My Website URL : https://sumoon.pythonanywhere.com/<br><br>
-
 Current Weather API : https://api.openweathermap.org/data/2.5/weather?q={}&appid={}<br>
 Forecast Weather API : https://api.openweathermap.org/data/2.5/forecast?lat={}&lon={}&appid={}<br><br>
 
@@ -18,7 +16,7 @@ Forecast Weather API : https://api.openweathermap.org/data/2.5/forecast?lat={}&l
 <h4>Login Module:</h4><br>
 <b>Only registered users can login with their username and password</b><br>
 
-<h4>Weather Module<</h4>br>
+<h4>Weather Module</h4><br>
 <b>Users can enter the city name The module is designed to provide users with a quick and easy overview of the weather in the entered city name</b><b>
 <b>It describes temperature </b><br>
 <b>Humidity</b><br>
@@ -26,7 +24,7 @@ Forecast Weather API : https://api.openweathermap.org/data/2.5/forecast?lat={}&l
 <b>Weather icons are uded to describe air,cloud/sky conditions</b><br>
 <b><h4>User can compare weather of two different cities as well by providing city name in both fields</h4></b><br>
 
-<h4>Logout Module<</h4>br>
+<h4>Logout Module</h4><br>
 <b>After clicking the logout button User will be redirected to Login Page</b><br>
 <b>User cannot see the Weather page without log in</b><br>
 
