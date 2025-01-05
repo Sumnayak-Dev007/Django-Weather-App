@@ -18,7 +18,7 @@ Forecast Weather API : https://api.openweathermap.org/data/2.5/forecast?lat={}&l
 <h4>Login Module:</h4><br>
 <b>Only registered users can login with their username and password</b><br>
 
-<h4>Weather Module<</h4>br>
+<h4>Weather Module</h4><br>
 <b>Users can enter the city name The module is designed to provide users with a quick and easy overview of the weather in the entered city name</b><b>
 <b>It describes temperature </b><br>
 <b>Humidity</b><br>
