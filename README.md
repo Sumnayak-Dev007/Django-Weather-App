@@ -26,7 +26,7 @@ Forecast Weather API : https://api.openweathermap.org/data/2.5/forecast?lat={}&l
 <b>Weather icons are uded to describe air,cloud/sky conditions</b><br>
 <b><h4>User can compare weather of two different cities as well by providing city name in both fields</h4></b><br>
 
-<h4>Logout Module</h4>br>
+<h4>Logout Module</h4><br>
 <b>After clicking the logout button User will be redirected to Login Page</b><br>
 <b>User cannot see the Weather page without log in</b><br>
 
