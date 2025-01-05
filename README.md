@@ -1,11 +1,11 @@
 <h2>Weather App</h2><br><br>
 
-My API key : ""<br>
+My API key :  " "<br> (API Key is mandatory for this API):)
 
 Current Weather API : https://api.openweathermap.org/data/2.5/weather?q={}&appid={}<br>
 Forecast Weather API : https://api.openweathermap.org/data/2.5/forecast?lat={}&lon={}&appid={}<br><br>
 
-<h4>Modules:<br><br>
+<h4>Modules:<br>
 <h4>Register Module:</h4>
 <b>User can register with their unique credentials </b>
 <h4>Validations Measures</h4>
@@ -16,7 +16,7 @@ Forecast Weather API : https://api.openweathermap.org/data/2.5/forecast?lat={}&l
 </ul></b></li></ul>
 
 
-<h4>Login Module:</h4><br>
+<h4>Login Module:</h4>
 <b>Only registered users can login with their username and password</b><br>
 
 <h4>Weather Module</h4>
@@ -28,11 +28,11 @@ Forecast Weather API : https://api.openweathermap.org/data/2.5/forecast?lat={}&l
 <li><b>Weather icons are uded to describe air,cloud/sky conditions</b></li>
 <li><h4>User can compare weather of two different cities as well by providing city name in both fields</h4></li></ul><br>
 
-<h4>Logout Module</h4><br>
+<h4>Logout Module</h4>
 <b>After clicking the logout button User will be redirected to Login Page</b><br>
-<b>User cannot see the Weather page without log in</b><br>
+<b>User cannot see the Weather page without log in</b>
 
-<h4>Security</h4><br>
+<h4>Security</h4>
 <b>No user can access directly the weather page by just entering URL of the page</b><br>
 
 
