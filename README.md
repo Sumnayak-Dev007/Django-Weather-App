@@ -21,12 +21,12 @@ Forecast Weather API : https://api.openweathermap.org/data/2.5/forecast?lat={}&l
 
 <h4>Weather Module</h4>
 <ul>
-<li><b>Users can enter the city name The module is designed to provide users with a quick and easy overview of the weather in the entered city name</b></li><br>
-<li>><b>It describes temperature </b></li<br>
-<li><b>Humidity</b></li><br>
-<li><b>It describes 5 day weather forecast of the city</b></li><br>
-<li><b>Weather icons are uded to describe air,cloud/sky conditions</b></li><br>
-<li><b><h4>User can compare weather of two different cities as well by providing city name in both fields</h4></b></li></ul><br>
+<li><b>Users can enter the city name The module is designed to provide users with a quick and easy overview of the weather in the entered city name</b></li>
+<li>><b>It describes temperature </b></li>
+<li><b>Humidity</b></li>
+<li><b>It describes 5 day weather forecast of the city</b></li>
+<li><b>Weather icons are uded to describe air,cloud/sky conditions</b></li>
+<li><b><h4>User can compare weather of two different cities as well by providing city name in both fields</h4></b></li></ul>
 
 <h4>Logout Module</h4><br>
 <b>After clicking the logout button User will be redirected to Login Page</b><br>
