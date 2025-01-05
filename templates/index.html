@@ -1,0 +1,69 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+</head>
+<style>
+.forecast-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: black;
+}
+
+.forecast {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin: 10px;
+  width: calc(100% / 5 - 20px);
+  box-sizing: border-box;
+
+}
+
+@media (max-width: 767px) {
+  .forecast {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .forecast {
+    width: 100%;
+  }
+}
+    </style>
+<body style="background-image: url('https://images.pexels.com/photos/3008509/pexels-photo-3008509.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-repeat: no-repeat; font-family: Arial, sans-serif; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; background-size: cover; color: #fff;">
+    <h4 style="position: relative; bottom:10px; right:25px; display:inline; color:black;">Hello {{user.username}}!</h4>
+    <a href="{% url 'logout' %}" style="position: absolute; top: 5px; right: 5px; background-color: #f56565; color: white; font-weight: bold; padding: 5px 12px; border-radius: 4px; text-decoration: none;">
+  Logout
+</a>
+
+
+    <form method="post" style="position: relative; top:35px; display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 400px; padding: 15px; border-radius: 8px; background: rgba(0, 0, 0, 0.7);">
+        {% csrf_token %}
+        <input type="text" name="city1" placeholder="Enter city 1" style="padding: 10px; border: none; border-radius: 5px; font-size: 16px;">
+        <input type="text" name="city2" placeholder="Enter city 2" style="padding: 10px; border: none; border-radius: 5px; font-size: 16px;">
+        <button type="submit" style="padding: 10px; border: none; border-radius: 5px; font-size: 16px; background-color: #0288d1; color: #fff; cursor: pointer; transition: background-color 0.3s ease;">Compare Weather</button>
+    </form>
+  <div class="comparison-container">
+  {% if weather_data1 %}
+    <div class="city-container">
+      {% include 'city_weather.html' with weather_data=weather_data1 daily_forecasts=daily_forecasts1 %}
+    </div>
+  {% endif %}
+  {% if weather_data2 %}
+    <div class="city-container">
+      {% include 'city_weather.html' with weather_data=weather_data2 daily_forecasts=daily_forecasts2 %}
+    </div>
+  {% endif %}
+</div>
+
+
+</body>
+</html>

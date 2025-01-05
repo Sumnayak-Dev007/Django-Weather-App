@@ -1,0 +1,40 @@
+<style>
+
+.container {
+  background: var(--transp-white-2);
+  backdrop-filter: blur(10px);
+  margin: 3rem auto;
+  padding: 2rem;
+  border: 1px solid var(--transp-white-1);
+  border-radius: 10px;
+  color: rgb(5, 41, 51);
+  text-align: center;
+}
+
+</style>
+<body>
+{% if weather_data %}
+<div class="container">
+
+    <h1>{{ weather_data.city }}</h1>
+    <h2>{{ weather_data.temperature }}°C</h2>
+    <p>{{ weather_data.description }}</p>
+    <img src="http://openweathermap.org/img/w/{{ weather_data.icon }}.png" alt="{{ weather_data.description }}">
+</div>
+    
+{% endif %}
+
+{% if daily_forecasts %}
+    <h2 style="color:black;font-weight: 700; background-color:var(--transp-white-2); display:inline;">5-Day Forecast</h2>
+    <div class="forecast-container">
+        {% for forecast in daily_forecasts %}
+            <div class="forecast">
+                <h3>{{ forecast.day }}</h3>
+                <p>{{ forecast.min_temp }}°C - {{ forecast.max_temp }}°C</p>
+                <p>{{ forecast.description }}</p>
+                <img src="http://openweathermap.org/img/w/{{ forecast.icon }}.png" alt="{{ forecast.description }}">
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+</body>

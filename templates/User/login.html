@@ -1,0 +1,61 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    {% tailwind_css %}
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+    <!-- Login Form -->
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+        <h2 class="text-2xl font-bold text-center mb-6">User Login</h2>
+        {% if form.non_field_errors %}
+                <div style="color: rgb(209, 50, 50);">
+                <p class="font-medium!">Error :</p>
+                <ul class="list-disc! pl-5! space-y-1!">
+            {% for error in form.non_field_errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+                </ul>
+                </div>
+            {% endif %}
+
+
+        <form action="{% url 'login' %}" method="POST" class="space-y-4">
+            {% csrf_token %}
+            <!-- Username Field -->
+            <div>
+                <label for="{{form.username.id_for_label}}" class="block text-sm font-medium text-gray-700">Username:</label>
+                <input type="text" id="{{form.username.id_for_label}}" name="{{form.username.name}}" placeholder="Enter username" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    {% if form.username.errors %}
+                        <p class="text-red-500 text-sm mt-1">{{ form.username.errors.0 }}</p>
+                    {% endif %}
+            </div>
+            <!-- Password Field -->
+            <div>
+                <label for="{{form.password.id_for_label}}" class="block text-sm font-medium text-gray-700">Password:</label>
+                <input type="password" id="{{form.password.id_for_label}}" name="{{form.password.name}}" placeholder="Enter password" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    {% if form.password.errors %}
+                        <p class="text-red-500 text-sm mt-1">{{ form.password.errors.0 }}</p>
+                    {% endif %}
+            </div>
+            <!-- Submit Button -->
+            <div>
+                <button type="submit"
+                    class="w-full bg-green-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-green-600">
+                    Login
+                </button>
+            </div>
+            <a href="{% url 'register' %}" class="mt-4 text-xl underline text-blue-500 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Sign up</a>
+
+
+        </form>
+    </div>
+
+</body>
+</html>
