@@ -3,17 +3,18 @@ import requests
 from django.shortcuts import render
 
 def Home_view(request):
-    API_KEY = '<Your_API_Key>'
+    API_KEY = '3a7e1a8a00ef3376db9a4e149460c0e7'
     current_weather_url = "https://api.openweathermap.org/data/2.5/weather?q={}&appid={}"
     forecast_url = "https://api.openweathermap.org/data/2.5/forecast?lat={}&lon={}&appid={}"
 
     if request.method == "POST":
-        city1 = request.POST['city1']
+        city1 = request.POST['city1'].strip()  # Stripping city1 to remove any unwanted spaces
         city2 = request.POST.get('city2', None)
 
         weather_data1, daily_forecasts1 = fetch_weather_and_forecast(city1, API_KEY, current_weather_url, forecast_url)
 
         if city2:
+            city2 = city2.strip() 
             weather_data2, daily_forecasts2 = fetch_weather_and_forecast(city2, API_KEY, current_weather_url, forecast_url)
         else:
             weather_data2, daily_forecasts2 = None, None
@@ -31,8 +32,17 @@ def Home_view(request):
 
 def fetch_weather_and_forecast(city, api_key, current_weather_url, forecast_url):
     response = requests.get(current_weather_url.format(city, api_key)).json()
-    lat, lon = response['coord']['lat'], response['coord']['lon']
+    print("Current Weather API Response:", response)   # DEBUG PRINT
+
+    # If city not found or key invalid
+    if response.get("cod") != 200:
+        return {"error": response.get("message", "Unknown error")}, None
+
+    lat = response["coord"]["lat"]
+    lon = response["coord"]["lon"]
+
     forecast_response = requests.get(forecast_url.format(lat, lon, api_key)).json()
+    print("Forecast API Response:", forecast_response)  # DEBUG PRINT
 
     weather_data = {
         'city': city,
@@ -41,18 +51,17 @@ def fetch_weather_and_forecast(city, api_key, current_weather_url, forecast_url)
         'icon': response['weather'][0]['icon'],
     }
 
-    # Extracting the next 5 forecasts spaced roughly 24 hours apart
     daily_forecasts = []
-    for i in range(0, len(forecast_response['list']), 8):  # 8 entries per day (3-hour intervals)
+    for i in range(0, len(forecast_response.get('list', [])), 8):
         if len(daily_forecasts) >= 5:
             break
-        forecast = forecast_response['list'][i]
+        f = forecast_response['list'][i]
         daily_forecasts.append({
-            'day': datetime.datetime.fromtimestamp(forecast['dt']).strftime('%A'),
-            'min_temp': round(forecast['main']['temp_min'] - 273.15, 2),
-            'max_temp': round(forecast['main']['temp_max'] - 273.15, 2),
-            'description': forecast['weather'][0]['description'],
-            'icon': forecast['weather'][0]['icon'],
+            'day': datetime.datetime.fromtimestamp(f['dt']).strftime('%A'),
+            'min_temp': round(f['main']['temp_min'] - 273.15, 2),
+            'max_temp': round(f['main']['temp_max'] - 273.15, 2),
+            'description': f['weather'][0]['description'],
+            'icon': f['weather'][0]['icon'],
         })
 
     return weather_data, daily_forecasts

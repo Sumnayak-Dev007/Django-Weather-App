@@ -20,8 +20,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', include('Accounts.urls')),  # Home page now serves Register view
-    path('weather/', include('Weatherapp.urls')),
+    path('', include('Weatherapp.urls')),
     path("_reload_/", include("django_browser_reload.urls")),
     path('admin/', admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

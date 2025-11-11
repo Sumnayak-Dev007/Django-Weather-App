@@ -39,9 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Weatherapp',
-    'Accounts',
-    'tailwind',
-    'theme',
 ]
 
 TAILWIND_APP_NAME = 'theme'
@@ -87,12 +84,8 @@ WSGI_APPLICATION = 'Weather.wsgi.application'
 
 DATABASES = {
     'default': {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "weatherapp",
-        "USER": "",
-        "PASSWORD": "",
-        "HOST": "127.0.0.1",
-        "PORT": "3306",
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
